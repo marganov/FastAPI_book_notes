@@ -1,0 +1,12 @@
+
+# Игнорирование виртуальных окружений и кешей
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.idea/
+.vscode/
+
