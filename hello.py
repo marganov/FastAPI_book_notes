@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body, Header
 
 app = FastAPI() # объект FastAPI верхнго уровня представляющий собой всё веб-приложение
 
@@ -7,6 +7,16 @@ app = FastAPI() # объект FastAPI верхнго уровня предст�
 #Этот декоратор применяется только к GET (другие глаголы можно, но с отдельными функциями).
 def greet(who: str):
     return f"Hello? {who}?"
+
+
+@app.post("/hi")
+def greeting(who: str = Body(embed=True)):
+    return f"Hello? {who}"
+
+
+@app.post("/hi/header")
+def greeting(who: str = Header()):
+    return f"Hello {who}"
 
 # запуск Uvicorn внутри приложения
 if __name__ == "__main__":
