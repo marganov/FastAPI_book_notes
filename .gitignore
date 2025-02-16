@@ -9,4 +9,4 @@ env/
 venv/
 .idea/
 .vscode/
-
+venv_for_FastAPI_book/
